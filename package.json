@@ -1,0 +1,13 @@
+{
+  "name": "news-api",
+  "version": "1.0.0",
+  "description": "A simple news API using Flask and BeautifulSoup",
+  "main": "news_api.py",
+  "scripts": {
+    "start": "vercel dev"
+  },
+  "dependencies": {},
+  "engines": {
+    "python": "3.9"
+  }
+}
