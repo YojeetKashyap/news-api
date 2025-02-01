@@ -50,9 +50,6 @@ def news():
 
     return jsonify({"articles": articles, "totalResults": len(articles)})
 
-# Required for Vercel serverless function
-def handler(event, context):
-    return app(event, context)
 
 if __name__ == "__main__":
     app.run(debug=True)
