@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
     {
-      "src": "news_app.py",
+      "src": "news_api.py",
       "use": "@vercel/python"
     },
     "routes": [
