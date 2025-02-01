@@ -1,10 +1,10 @@
 from flask import Flask, jsonify, request
-#from flask_cors import CORS
+from flask_cors import CORS
 import requests
 from bs4 import BeautifulSoup
 
 app = Flask(__name__)
-#CORS(app)
+CORS(app)
 
 @app.route("/")
 def news():
@@ -22,12 +22,10 @@ def news():
 
     url = categories.get(category, categories["world"])
     
-    try:
-        r = requests.get(url, timeout=10)  # Add timeout
-        r.raise_for_status()  # Ensure response is 200 OK
-        htmlContent = r.content
-    except requests.exceptions.RequestException as e:
-        return jsonify({"error": "Failed to fetch news", "details": str(e)}), 500
+    r = requests.get(url, timeout=10)  # Add timeout
+    r.raise_for_status()  # Ensure response is 200 OK
+    htmlContent = r.content
+
 
     soup = BeautifulSoup(htmlContent, 'html.parser')
     data = soup.find_all("article", class_="IBr9hb")
@@ -56,8 +54,13 @@ def news():
 def handler(event, context):
     return app(event, context)
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     app.run(debug=True)
+
+
+
+
+
 
 
 
