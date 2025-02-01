@@ -1,5 +1,5 @@
 Flask
-reqest
+request
 flask_cors 
 requests
 beautifulsoup4
