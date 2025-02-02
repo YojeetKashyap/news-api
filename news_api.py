@@ -34,7 +34,7 @@ def news():
     for id, value in enumerate(data):
         title_tag = value.find("a", class_="gPFEn")
         link = title_tag.get("href") if title_tag else "#"
-        im_tag = soup.find("img", class_="Quavad vwBmvb")
+        im_tag = value.find("img", class_="Quavad vwBmvb")
         im = im_tag.get('src') if im_tag else "#"
         author_tag = value.find("div", class_="bInasb")
         author = author_tag.find("span").text if author_tag else "Unknown"
