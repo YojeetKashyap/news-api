@@ -43,7 +43,7 @@ def news():
             "id": id,
             "author": author,
             "title": title_tag.text if title_tag else "No title",
-            "link": f"https://news.google.com{link}" if link.startswith("/") else link,
+            "link": f"https://news.google.com{link[1:]}",
             "img": f"https://news.google.com{im}" if im.startswith("/") else im
         }
         articles.append(article)
